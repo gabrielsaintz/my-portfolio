@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import "~@flaticon/flaticon-uicons/css/all/all";
+
+@font-face {
+  font-family: outfit;
+  src: url(/font/Outfit.ttf);
+}
+
+:root {
+  font-family: outfit, sans-serif;
+}
