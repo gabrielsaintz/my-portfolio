@@ -1,6 +1,22 @@
 "use client";
 
 import useColorMode from "@/hooks/useColorMode";
+import Link from "next/link";
+
+const NavbarList = [
+  {
+    title: "Inicio",
+    href: "/",
+  },
+  {
+    title: "Sobre",
+    href: "/about",
+  },
+  {
+    title: "Projetos",
+    href: "/projects",
+  },
+];
 
 const Navbar = () => {
   const [colorMode, setColorMode] = useColorMode();
@@ -8,6 +24,18 @@ const Navbar = () => {
   return (
     <nav className="flex flex-row justify-between py-2 px-3 fixed top-0 h-fit w-full">
       <div className="font-black text-zinc-900 dark:text-white text-2xl">GS.LAB</div>
+      <div className="flex flex-row gap-2">
+        {NavbarList.map((value) => (
+          <Link
+            key={value.href}
+            href={value.href}
+            className="font-bold text-xl text-zinc-900 dark:text-white"
+          >
+            {value.title}
+          </Link>
+        ))}
+      </div>
+
       <div
         onClick={() => setColorMode(colorMode === "light" ? "dark" : "light")}
         className="flex items-center bg-zinc-200 dark:bg-zinc-800 pl-1 dark:pl-5 
@@ -16,7 +44,7 @@ const Navbar = () => {
         hover:cursor-pointer"
       >
         <div
-          className="bg-white dark:bg-zinc-900  
+          className="bg-zinc-50 dark:bg-zinc-900  
         flex items-center justify-center
         h-5 w-5 rounded-full transition-all
         "

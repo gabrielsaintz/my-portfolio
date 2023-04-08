@@ -1,4 +1,4 @@
-export default function Head() {
+function Head() {
   return (
     <>
       <title>Gabriel Saintz</title>
@@ -8,3 +8,5 @@ export default function Head() {
     </>
   );
 }
+
+export default Head;
