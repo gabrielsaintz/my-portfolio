@@ -22,14 +22,14 @@ const Navbar = () => {
   const [colorMode, setColorMode] = useColorMode();
 
   return (
-    <nav className="flex flex-row justify-between py-2 px-3 fixed top-0 h-fit w-full">
+    <nav className="flex flex-row justify-between py-4 px-9 fixed top-0 h-fit w-full z-10">
       <div className="font-black text-zinc-900 dark:text-white text-2xl">GS.LAB</div>
       <div className="flex flex-row gap-2">
         {NavbarList.map((value) => (
           <Link
             key={value.href}
             href={value.href}
-            className="font-bold text-xl text-zinc-900 dark:text-white"
+            className="font-light text-xl text-zinc-900 dark:text-white"
           >
             {value.title}
           </Link>
